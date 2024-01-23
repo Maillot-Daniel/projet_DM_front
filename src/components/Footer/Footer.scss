@@ -1,0 +1,48 @@
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.footer-content {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: lightgrey;
+
+}
+
+.contact-info,
+.logo-container,
+.social-media {
+    width: 30%; // Ajustez la largeur en fonction de vos besoins
+}
+
+.logo {
+    width: 100%;
+    max-width: 150px; // Ajoutez une largeur maximale pour le logo si nécessaire
+}
+
+.contact-info {
+    text-align: left;
+}
+
+.logo-container {
+    text-align: center;
+}
+
+.social-media {
+    text-align: right;
+
+    a {
+        margin-right: 10px; // Ajoutez de la marge entre les liens si nécessaire
+    }
+}
+
+h3 {
+    text-align: center;
+}
+
+p {
+    text-align: start;
+}
