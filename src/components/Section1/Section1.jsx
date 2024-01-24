@@ -1,10 +1,25 @@
 import { useState } from "react";
 import "./Section1.scss";
-//import fond from '../Images/fond.jpg';
+import SignUpForm from "../SignUpForm/SignUpForm";
+import SignInForm from "../SignInForm/SignInForm";
+import { useSelector } from "react-redux";
+import { APP_ROUTES } from "../../Constants/route.const";
 
 const Section1 = (props) => {
-    // État pour stocker la valeur de la barre de recherche
+    const { currentRoute } = useSelector((store) => store.routeState);
     const [searchTerm, setSearchTerm] = useState("");
+
+    const handleRoutes = () => {
+        switch (currentRoute) {
+            case APP_ROUTES.SIGN_IN:
+                return <SignInForm />;
+            case APP_ROUTES.SIGN_UP:
+                return <SignUpForm />;
+            default:
+                break;
+        }
+    };
+    
 
     // Fonction pour gérer les changements dans la barre de recherche
     const handleSearchChange = (event) => {
@@ -20,21 +35,27 @@ const Section1 = (props) => {
 
     return (
         <section className="fond">
-         {/* Barre de recherche */}
-            <div className="search-bar">
-                <input
-                    type="text"
-                    placeholder="Rechercher..."
-                    value={searchTerm}
-                    onChange={handleSearchChange}
-                />
-                <button onClick={handleSearchSubmit}>Rechercher</button>
-            </div>
+      {/* Barre de recherche */}
+      <div className="search-bar">
+        <input
+          type="text"
+          placeholder="Rechercher..."
+          value={searchTerm}
+          onChange={handleSearchChange}
+        />
+        <button onClick={handleSearchSubmit}>Rechercher</button>
+      </div>
 
-            {/* Sections */}
-     
-        
-        </section>
+      {/* Sections */}
+      <div className="app">
+        <div className="container">
+          <div className="app__card card">
+            <h2>Creation de compte</h2>
+            {handleRoutes()}
+          </div>
+        </div>
+      </div>
+    </section>
     );
 };
 

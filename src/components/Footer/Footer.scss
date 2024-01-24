@@ -1,48 +1,35 @@
-.container {
-    max-width: 1400px;
-    margin: 0 auto;
-}
+/* Styles pour mobiles (par défaut) */
 
 .footer-content {
     width: 100%;
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    background-color: lightgrey;
-
+    justify-content: space-evenly;
+    /* Ajout de cette propriété */
+    box-shadow: 10px 10px 10px 10px black;
+    flex-direction: column;
 }
 
-.contact-info,
-.logo-container,
-.social-media {
-    width: 30%; // Ajustez la largeur en fonction de vos besoins
-}
+/* Styles pour tablettes */
 
-.logo {
-    width: 100%;
-    max-width: 150px; // Ajoutez une largeur maximale pour le logo si nécessaire
-}
-
-.contact-info {
-    text-align: left;
-}
-
-.logo-container {
-    text-align: center;
-}
-
-.social-media {
-    text-align: right;
-
-    a {
-        margin-right: 10px; // Ajoutez de la marge entre les liens si nécessaire
+@media screen and (min-width: 600px) {
+    .footer-content {
+        flex-direction: row;
     }
 }
 
-h3 {
-    text-align: center;
+/* Styles pour écrans de taille moyenne */
+
+@media screen and (min-width: 768px) {
+    /* Ajoutez des styles spécifiques pour les écrans de taille moyenne si nécessaire */
 }
 
-p {
-    text-align: start;
+/* Styles pour écrans de bureau */
+
+@media screen and (min-width: 1024px) {
+    /* Ajoutez des styles spécifiques pour les écrans de bureau si nécessaire */
+    .container {
+        max-width: 1400px;
+        margin: 0 auto;
+    }
 }

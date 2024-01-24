@@ -1,4 +1,4 @@
-import React from "react";
+import { Link } from 'react-router-dom';
 import "./Footer.scss";
 import logo from '../Images/logo.png';
 
@@ -13,9 +13,9 @@ const Footer = (props) => {
                     <p>Adresse: 123 Rue de la Danse, 75001 Paris, France</p>
                 </div>
 
-                <div className="logo-container">
-                    <img src={logo} alt="Logo dansunsation" className="logo" />
-                </div>
+               <Link to="/" className="">
+        <img src={logo} alt="Logo dansunsation" />
+      </Link>
 
                 <div className="social-media">
                     <h3>Réseaux sociaux</h3>

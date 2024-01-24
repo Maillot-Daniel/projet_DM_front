@@ -1,0 +1,17 @@
+@use "../../styles/mixins" as mxn;
+.sign-up-form {
+    @include mxn.flex("column", "nowrap");
+    gap: 32px;
+}
+
+.btns {
+    &>* {
+        @include mxn.grow;
+    }
+    @include mxn.flex;
+    gap: 16px;
+}
+
+.sign-up-form label {
+    color: white;
+}

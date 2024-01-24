@@ -1,19 +1,30 @@
-import "./Nav.scss";
+import { Link } from 'react-router-dom';
+import logo from '../Images/logo.png';
+import Button from '../Button/Button';
+import './Nav.scss';
 
-const Nav = () => {
-
-
+function Nav() {
     return (
+        <nav>
+            <div className="box">
+                <Link to="/" className="logo">
+                    <img src={logo} alt="Logo dansunsation" />
+                </Link>
+            </div>
+            
+            <div>
+                <ul>
+                    <li><Link to="/entrees">Entrées</Link></li>
+                    <li><Link to="/plats">Plats</Link></li>
+                    <li><Link to="/desserts">Desserts</Link></li>
+                    <li><Link to="/divers">Divers</Link></li>
+                </ul>
 
-        <nav className="nav">
-            <a href="/">Entrées</a>
-            <a href="/">Plats</a>
-            <a href="/">Desserts</a>
-            <a href="/">Divers</a>
-      </nav>
-
-
+     
+            </div>
+            <Button text="Vos Ingrédients" />
+        </nav>
     );
-};
+}
 
 export default Nav;
